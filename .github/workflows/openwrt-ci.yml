@@ -244,8 +244,6 @@ jobs:
           CONFIG_PACKAGE_kmod-ath6kl-sdio=y
           CONFIG_PACKAGE_kmod-ath6kl-usb=y
           CONFIG_PACKAGE_kmod-ath9k=y
-          CONFIG_ATH9K_SUPPORT_PCOEM=y
-          CONFIG_ATH9K_TX99=y
           CONFIG_PACKAGE_kmod-ath9k-common=y
           CONFIG_PACKAGE_kmod-ath9k-htc=y
           EOF

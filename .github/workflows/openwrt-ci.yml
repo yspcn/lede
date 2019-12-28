@@ -240,9 +240,6 @@ jobs:
           cat >> .config <<EOF		  
           CONFIG_PACKAGE_kmod-ath=y
           CONFIG_PACKAGE_kmod-ath10k-ct=y
-          CONFIG_PACKAGE_kmod-ath6kl=y
-          CONFIG_PACKAGE_kmod-ath6kl-sdio=y
-          CONFIG_PACKAGE_kmod-ath6kl-usb=y
           CONFIG_PACKAGE_kmod-ath9k=y
           CONFIG_PACKAGE_kmod-ath9k-common=y
           CONFIG_PACKAGE_kmod-ath9k-htc=y

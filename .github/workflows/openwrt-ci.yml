@@ -236,6 +236,19 @@ jobs:
           CONFIG_PACKAGE_openssh-sftp-server=y
           CONFIG_PACKAGE_luci-i18n-usb-printer-zh-cn=y
           EOF
+          # Wireless Drivers
+          cat >> .config <<EOF		  
+          CONFIG_PACKAGE_kmod-ath=y
+          CONFIG_PACKAGE_kmod-ath10k-ct=y
+          CONFIG_PACKAGE_kmod-ath6kl=y
+          CONFIG_PACKAGE_kmod-ath6kl-sdio=y
+          CONFIG_PACKAGE_kmod-ath6kl-usb=y
+          CONFIG_PACKAGE_kmod-ath9k=y
+          CONFIG_ATH9K_SUPPORT_PCOEM=y
+          CONFIG_ATH9K_TX99=y
+          CONFIG_PACKAGE_kmod-ath9k-common=y
+          CONFIG_PACKAGE_kmod-ath9k-htc=y
+          EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           cat >> .config <<EOF
           # CONFIG_TARGET_IMAGES_PAD is not set

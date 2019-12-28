@@ -238,7 +238,6 @@ jobs:
           EOF
           # Wireless Drivers
           cat >> .config <<EOF		  
-          CONFIG_PACKAGE_kmod-ath=y
           CONFIG_PACKAGE_kmod-ath9k=y
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):

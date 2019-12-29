@@ -1,0 +1,23 @@
+
+config global
+	option koolproxy_port '0'
+	option startup_delay '5'
+	option koolproxy_ipv6 '0'
+	option koolproxy_mode '1'
+	option koolproxy_rules 'easylistchina.txt fanboy.txt yhosts.txt kp.dat user.txt'
+	option koolproxy_acl_default '3'
+	option time_update '3'
+	option enabled '0'
+
+config rss_rule
+	option name 'kpr_our_rule.txt'
+	option file 'kpr_our_rule.txt'
+	option load '1'
+	option url 'https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kpr_our_rule.txt'
+	option time '2019-12-22 21:39'
+
+config rss_rule
+	option load '1'
+	option name '01'
+	option url 'https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt'
+

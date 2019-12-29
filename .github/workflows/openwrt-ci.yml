@@ -168,9 +168,9 @@ jobs:
           EOF
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          cat >> .config <<EOF
           CONFIG_DEFAULT_luci-app-accesscontrol=y
           CONFIG_PACKAGE_luci-app-acme=y
+          CONFIG_PACKAGE_luci-app-adguardhome=y
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
           CONFIG_PACKAGE_luci-app-adblock=y
           CONFIG_PACKAGE_luci-app-advanced-reboot
@@ -182,25 +182,34 @@ jobs:
           CONFIG_DEFAULT_luci-app-filetransfer=y
           # CONFIG_DEFAULT_luci-app-guest-wifi is not set
           CONFIG_PACKAGE_luci-app-hd-idle=y
-          CONFIG_PACKAGE_luci-app-koolproxyR=y
+          CONFIG_PACKAGE_luci-app-mentohust=y
           CONFIG_PACKAGE_luci-app-meshwizard=y
           CONFIG_PACKAGE_luci-app-mwan3helper=y
           CONFIG_PACKAGE_luci-app-minidlna=y
           CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_PACKAGE_luci-app-nps=y
-          CONFIG_PACKAGE_luci-app-koolproxyR=y
+          # CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_DEFAULT_luci-app-pppoe-relay=y
           CONFIG_DEFAULT_luci-app-ramfree=y
           CONFIG_DEFAULT_luci-app-samba=y
-          CONFIG_PACKAGE_luci-app-smartdns=y
+          # CONFIG_PACKAGE_luci-app-smartdns=y
           CONFIG_DEFAULT_luci-app-shairplay=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_Shadowsocks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_V2ray=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_Kcptun=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_ShadowsocksR_Server=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_Shadowsocks_Server=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_ShadowsocksR_Socks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus-jo_INCLUDE_Shadowsocks_Socks=y
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-uhttpd=y
           CONFIG_DEFAULT_luci-app-unblockmusic=y
@@ -209,11 +218,11 @@ jobs:
           CONFIG_DEFAULT_luci-app-vlmcsd=y
           CONFIG_PACKAGE_luci-app-verysync=y
           CONFIG_DEFAULT_luci-app-vsftpd=y
-          CONFIG_PACKAGE_luci-app-webadmin=y
-          CONFIG_PACKAGE_luci-app-wireguard=y
+          # CONFIG_PACKAGE_luci-app-webadmin is not set
+          # CONFIG_PACKAGE_luci-app-wireguard is not set
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          CONFIG_PACKAGE_luci-app-wifischedule=y
-          CONFIG_PACKAGE_luci-app-wireless-regdb=y
+          # CONFIG_PACKAGE_luci-app-wifischedule is not set
+          # CONFIG_PACKAGE_luci-app-wireless-regdb is not set
           CONFIG_PACKAGE_luci-app-wol=y
           # CONFIG_PACKAGE_luci-app-xlnetacc is not set
           CONFIG_DEFAULT_luci-app-zerotier=y
@@ -233,6 +242,7 @@ jobs:
           CONFIG_PACKAGE_tree=y
           CONFIG_PACKAGE_vim-fuller=y
           CONFIG_PACKAGE_wget=y
+          CONFIG_PACKAGE_mentohust=y
           CONFIG_PACKAGE_openssh-sftp-server=y
           CONFIG_PACKAGE_luci-i18n-usb-printer-zh-cn=y
           EOF

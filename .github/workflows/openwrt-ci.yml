@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - master
+      - masteree
   #     ↑↑↑ 改成你的分支名, 一般是master
   # schedule:
   #   - cron: 0 20 * * *
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: master
+          ref: masteree
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
@@ -76,6 +76,7 @@ jobs:
           ./scripts/feeds install -a
       - name: Costom configure file
         run: |
+          [ -e files ] && mv files ./files
           rm -f ./.config*
           touch ./.config
           #
@@ -169,10 +170,10 @@ jobs:
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_DEFAULT_luci-app-accesscontrol=y
-          CONFIG_PACKAGE_luci-app-acme=y
+          # CONFIG_PACKAGE_luci-app-acme=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
-          CONFIG_PACKAGE_luci-app-adblock=y
+          # CONFIG_PACKAGE_luci-app-adblock is not set
           CONFIG_PACKAGE_luci-app-advanced-reboot
           CONFIG_DEFAULT_luci-app-autoreboot=y
           CONFIG_PACKAGE_luci-app-ddns=y
@@ -185,7 +186,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-mentohust=y
           CONFIG_PACKAGE_luci-app-meshwizard=y
           CONFIG_PACKAGE_luci-app-mwan3helper=y
-          CONFIG_PACKAGE_luci-app-minidlna=y
+          # CONFIG_PACKAGE_luci-app-minidlna is not set
           CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_PACKAGE_luci-app-nps=y
           # CONFIG_PACKAGE_luci-app-koolproxyR=y
@@ -214,6 +215,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-uhttpd=y
           CONFIG_DEFAULT_luci-app-unblockmusic=y
           CONFIG_DEFAULT_luci-app-usb-printer=y
+          CONFIG_PACKAGE_kmod-usb-printer=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
           CONFIG_DEFAULT_luci-app-vlmcsd=y
           CONFIG_PACKAGE_luci-app-verysync=y

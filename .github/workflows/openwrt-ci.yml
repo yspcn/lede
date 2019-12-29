@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - masteree
+      - master
   #     ↑↑↑ 改成你的分支名, 一般是master
   # schedule:
   #   - cron: 0 20 * * *
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: masteree
+          ref: master
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
@@ -76,7 +76,6 @@ jobs:
           ./scripts/feeds install -a
       - name: Costom configure file
         run: |
-          [ -e files ] && mv files ./files
           rm -f ./.config*
           touch ./.config
           #
@@ -250,7 +249,7 @@ jobs:
           EOF
           # Wireless Drivers
           cat >> .config <<EOF		  
-          CONFIG_PACKAGE_kmod-ath9k=y
+          # CONFIG_PACKAGE_kmod-ath9k=y
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           cat >> .config <<EOF

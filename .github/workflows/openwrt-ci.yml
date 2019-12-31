@@ -123,7 +123,7 @@ jobs:
           # 设置根目录大小
           cat >> .config <<EOF
           CONFIG_TARGET_KERNEL_PARTSIZE=16
-          CONFIG_TARGET_ROOTFS_PARTSIZE=500
+          CONFIG_TARGET_ROOTFS_PARTSIZE=160
           CONFIG_TARGET_ROOTFS_PARTNAME=""
           CONFIG_KERNEL_BUILD_USER="ysp Playground"
           CONFIG_GRUB_TITLE="OpenWrt AutoBuild by ysp"
@@ -166,7 +166,7 @@ jobs:
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_DEFAULT_luci-app-accesscontrol=y
-          # CONFIG_PACKAGE_luci-app-acme=y
+          CONFIG_PACKAGE_luci-app-acme=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
           # CONFIG_PACKAGE_luci-app-adblock is not set

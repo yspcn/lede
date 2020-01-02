@@ -191,6 +191,16 @@ config redirect
 	option src_dport '7681'
 	option dest_port '7681'
 
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '9999'
+	option dest_ip '192.168.123.1'
+	option dest_port '9999'
+	option name 'portainer'
+
 config include 'zerotier'
 	option type 'script'
 	option path '/etc/zerotier.start'
@@ -288,8 +298,8 @@ config redirect
 	option src 'wan'
 	option dest 'lan'
 	option proto 'tcp udp'
-	option src_dport '9999'
+	option src_dport '1883'
 	option dest_ip '192.168.123.1'
-	option dest_port '9999'
-	option name 'portainer'
+	option dest_port '1883'
+	option name 'mqtt'
 

@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - master
+      - masteree
   #     ↑↑↑ 改成你的分支名, 一般是master
   # schedule:
   #   - cron: 0 20 * * *
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: master
+          ref: masteree
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
@@ -213,6 +213,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-uhttpd=y
           CONFIG_DEFAULT_luci-app-unblockmusic=y
+          CONFIG_PACKAGE_luci-app-usb-printer=y
           CONFIG_DEFAULT_luci-app-usb-printer=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
           CONFIG_DEFAULT_luci-app-vlmcsd=y

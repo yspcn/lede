@@ -70,6 +70,7 @@ jobs:
           git clone https://github.com/Ameykyl/luci-app-koolproxyR
           git clone https://github.com/Leo-Jo/luci-app-ssr-plus-jo
           git clone https://github.com/rufengsuixing/luci-app-adguardhome
+          git clone https://github.com/frainzy1477/luci-app-clash
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -175,6 +176,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-adblock is not set
           CONFIG_PACKAGE_luci-app-advanced-reboot
           CONFIG_DEFAULT_luci-app-autoreboot=y
+          CONFIG_PACKAGE_luci-app-clash=y
           CONFIG_PACKAGE_luci-app-ddns=y
           CONFIG_PACKAGE_luci-app-dnspod=y
           CONFIG_PACKAGE_luci-app-docker=y
@@ -254,8 +256,8 @@ jobs:
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           cat >> .config <<EOF
-          # CONFIG_TARGET_IMAGES_PAD is not set
-          # CONFIG_VMDK_IMAGES is not set
+          CONFIG_TARGET_IMAGES_PAD=y
+          CONFIG_VMDK_IMAGES=y
           EOF
           # 
           # ========================固件定制部分结束========================

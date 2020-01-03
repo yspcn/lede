@@ -17,17 +17,3 @@ config interface 'lan'
 	option ip6assign '60'
 	option dns '114.114.114.114'
 
-config interface 'wan'
-	option ifname 'eth1'
-	option _orig_ifname 'eth1'
-	option _orig_bridge 'false'
-	option username '073108821026@changsha'
-	option password '08821026'
-	option ipv6 'auto'
-	option metric '40'
-	option proto 'pppoe'
-
-config interface 'wan6'
-	option ifname 'eth1'
-	option proto 'dhcpv6'
-

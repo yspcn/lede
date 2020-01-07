@@ -191,6 +191,11 @@ config redirect
 	option src_dport '7681'
 	option dest_port '7681'
 
+config include 'koolproxy'
+	option type 'script'
+	option path '/var/etc/koolproxy.include'
+	option reload '1'
+
 config redirect
 	option target 'DNAT'
 	option src 'wan'
@@ -255,11 +260,6 @@ config rule 'kms'
 	option proto 'tcp'
 	option dest_port '1688'
 
-config include 'koolproxy'
-	option type 'script'
-	option path '/var/etc/koolproxy.include'
-	option reload '1'
-
 config include 'shadowsocksr'
 	option type 'script'
 	option path '/var/etc/shadowsocksr.include'
@@ -298,8 +298,8 @@ config redirect
 	option src 'wan'
 	option dest 'lan'
 	option proto 'tcp udp'
-	option src_dport '1883'
+	option src_dport '943'
 	option dest_ip '192.168.123.1'
-	option dest_port '1883'
-	option name 'mqtt'
+	option dest_port '943'
+	option name 'onlyoffice'
 

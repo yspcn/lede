@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - masteree
+      - master
   #     ↑↑↑ 改成你的分支名, 一般是master
   # schedule:
   #   - cron: 0 20 * * *
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: masteree
+          ref: master
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
@@ -206,8 +206,9 @@ jobs:
           CONFIG_PACKAGE_luci-app-adguardhome=y
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
           # CONFIG_PACKAGE_luci-app-adblock is not set
-          CONFIG_PACKAGE_luci-app-advanced-reboot
+          CONFIG_PACKAGE_luci-app-advanced-reboot=y
           CONFIG_DEFAULT_luci-app-autoreboot=y
+          CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-clash=y
           CONFIG_PACKAGE_luci-app-ddns=y
           CONFIG_PACKAGE_luci-app-dnspod=y

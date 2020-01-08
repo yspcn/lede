@@ -193,11 +193,6 @@ jobs:
           CONFIG_PACKAGE_kmod-usb-storage-extras=y
           CONFIG_PACKAGE_kmod-usb-wdm=y
           CONFIG_PACKAGE_kmod-usbmon=y
-          CONFIG_PACKAGE_usb-modeswitch=y
-          CONFIG_PACKAGE_usbmuxd=y
-          CONFIG_PACKAGE_usbreset=y
-          CONFIG_PACKAGE_usbutils=y
-          CONFIG_PACKAGE_uuidd=y
           EOF
           # 常用LuCI插件选择:
           cat >> .config <<EOF

@@ -131,7 +131,7 @@ jobs:
           cat >> .config <<EOF
           CONFIG_GRUB_TITLE="OpenWrt AutoBuild by ysp"
           CONFIG_KERNEL_BUILD_USER="ysp Playground"
-          OF
+          EOF
           # IPv6支持:
           cat >> .config <<EOF
           CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y

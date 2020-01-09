@@ -59,6 +59,7 @@ jobs:
           sudo -E apt-get clean
       - name: Update packages
         run: |
+          git clone https://github.com/weedy/lede-rtl8812au-rtl8814au
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
@@ -134,7 +135,7 @@ jobs:
           EOF
           # IPv6支持:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
           CONFIG_PACKAGE_ipv6helper=y
           EOF
           # 多文件系统支持:
@@ -166,6 +167,8 @@ jobs:
           CONFIG_PACKAGE_kmod-usb2=y
           CONFIG_PACKAGE_kmod-usb2-pci=y
           CONFIG_PACKAGE_kmod-usb3=y
+          CONFIG_PACKAGE_kmod-rtl8812au=y
+          CONFIG_PACKAGE_kmod-rtl8814au=y
           EOF
           # 常用LuCI插件选择:
           cat >> .config <<EOF

@@ -12,7 +12,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - masteree
+      - master
   #     ↑↑↑ 改成你的分支名, 一般是master
   # schedule:
   #   - cron: 0 20 * * *
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: masteree
+          ref: master
         #      ↑↑↑ 改成你的分支名, 一般是master
 
       - name: Initialization environment
@@ -167,6 +167,38 @@ jobs:
           CONFIG_PACKAGE_kmod-usb2=y
           CONFIG_PACKAGE_kmod-usb2-pci=y
           CONFIG_PACKAGE_kmod-usb3=y
+          CONFIG_PACKAGE_kmod-usb-core=y
+          CONFIG_PACKAGE_kmod-usb-hid=y
+          CONFIG_PACKAGE_kmod-usb-net=y
+          CONFIG_PACKAGE_kmod-usb-net-asix=y
+          CONFIG_PACKAGE_kmod-usb-net-asix-ax88179=y
+          CONFIG_PACKAGE_kmod-usb-net-cdc-eem=y
+          CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
+          CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=y
+          CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=y
+          CONFIG_PACKAGE_kmod-usb-net-cdc-subset=y
+          CONFIG_PACKAGE_kmod-usb-net-dm9601-ether=y
+          CONFIG_PACKAGE_kmod-usb-net-hso=y
+          CONFIG_PACKAGE_kmod-usb-net-huawei-cdc-ncm=y
+          CONFIG_PACKAGE_kmod-usb-net-ipheth=y
+          CONFIG_PACKAGE_kmod-usb-net-kalmia=y
+          CONFIG_PACKAGE_kmod-usb-net-kaweth=y
+          CONFIG_PACKAGE_kmod-usb-net-mcs7830=y
+          CONFIG_PACKAGE_kmod-usb-net-pegasus=y
+          CONFIG_PACKAGE_kmod-usb-net-pl=y
+          CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=y
+          CONFIG_PACKAGE_kmod-usb-net-rndis=y
+          CONFIG_PACKAGE_kmod-usb-net-rtl8150=y
+          CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
+          CONFIG_PACKAGE_kmod-usb-storage=y
+          CONFIG_PACKAGE_kmod-usb-storage-extras=y
+          CONFIG_PACKAGE_kmod-usb-wdm=y
+          CONFIG_PACKAGE_kmod-usbmon=y
+          CONFIG_PACKAGE_usb-modeswitch=y
+          CONFIG_PACKAGE_usbmuxd=y
+          CONFIG_PACKAGE_usbreset=y
+          CONFIG_PACKAGE_usbutils=y
+          CONFIG_PACKAGE_uuidd=y
           CONFIG_PACKAGE_kmod-rtl8812au=y
           CONFIG_PACKAGE_kmod-rtl8814au=y
           EOF

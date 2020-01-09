@@ -131,15 +131,6 @@ config include 'wrtbwmon'
 	option path '/etc/wrtbwmon.include'
 	option reload '1'
 
-config redirect
-	option target 'DNAT'
-	option src 'wan'
-	option dest 'lan'
-	option src_dport '443'
-	option dest_ip '192.168.123.1'
-	option dest_port '443'
-	option name '路由'
-	option proto 'tcp udp'
 
 config redirect
 	option target 'DNAT'
@@ -150,16 +141,6 @@ config redirect
 	option dest_ip '192.168.123.1'
 	option dest_port '99'
 	option name 'nextcloud'
-
-config redirect
-	option target 'DNAT'
-	option src 'wan'
-	option dest 'lan'
-	option proto 'tcp udp'
-	option src_dport '444'
-	option dest_ip '192.168.123.1'
-	option dest_port '443'
-	option name 'ly'
 
 config redirect
 	option target 'DNAT'
@@ -293,13 +274,4 @@ config include 'unblockmusic'
 	option path '/var/etc/unblockmusic.include'
 	option reload '1'
 
-config redirect
-	option target 'DNAT'
-	option src 'wan'
-	option dest 'lan'
-	option proto 'tcp udp'
-	option src_dport '943'
-	option dest_ip '192.168.123.1'
-	option dest_port '943'
-	option name 'onlyoffice'
 

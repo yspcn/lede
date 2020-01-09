@@ -199,8 +199,8 @@ jobs:
           CONFIG_PACKAGE_usbreset=y
           CONFIG_PACKAGE_usbutils=y
           CONFIG_PACKAGE_uuidd=y
-          CONFIG_PACKAGE_kmod-rtl8812au=y
-          CONFIG_PACKAGE_kmod-rtl8814au=y
+          CONFIG_PACKAGE_kmod-rtl8812au-ct=y
+          CONFIG_PACKAGE_kmod-rtl8814au-ct=y
           EOF
           # 常用LuCI插件选择:
           cat >> .config <<EOF

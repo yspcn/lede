@@ -17,12 +17,12 @@ config zone
 
 config zone
 	option name 'wan'
-	option input 'REJECT'
 	option output 'ACCEPT'
 	option masq '1'
 	option mtu_fix '1'
 	option forward 'ACCEPT'
 	option network 'wan wan6 wan2'
+	option input 'ACCEPT'
 
 config forwarding
 	option src 'lan'
@@ -126,11 +126,15 @@ config rule
 config include
 	option path '/etc/firewall.user'
 
-config include 'wrtbwmon'
-	option type 'script'
-	option path '/etc/wrtbwmon.include'
-	option reload '1'
-
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option src_dport '443'
+	option name '路由'
+	option proto 'tcp udp'
+	option dest_port '443'
+	option dest_ip '192.168.123.188'
 
 config redirect
 	option target 'DNAT'
@@ -147,10 +151,20 @@ config redirect
 	option src 'wan'
 	option dest 'lan'
 	option proto 'tcp udp'
-	option src_dport '88'
+	option src_dport '444'
 	option dest_ip '192.168.123.1'
-	option dest_port '80'
+	option dest_port '443'
 	option name 'ly'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '88'
+	option name 'ly'
+	option dest_port '443'
+	option dest_ip '192.168.123.188'
 
 config redirect
 	option target 'DNAT'
@@ -186,6 +200,16 @@ config redirect
 	option dest_ip '192.168.123.1'
 	option dest_port '9999'
 	option name 'portainer'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '943'
+	option dest_ip '192.168.123.1'
+	option dest_port '943'
+	option name 'onlyoffice'
 
 config include 'zerotier'
 	option type 'script'
@@ -246,6 +270,11 @@ config include 'shadowsocksr'
 	option path '/var/etc/shadowsocksr.include'
 	option reload '1'
 
+config include 'wrtbwmon'
+	option type 'script'
+	option path '/etc/wrtbwmon.include'
+	option reload '1'
+
 config include 'mia'
 	option type 'script'
 	option path '/etc/mia.include'
@@ -274,4 +303,33 @@ config include 'unblockmusic'
 	option path '/var/etc/unblockmusic.include'
 	option reload '1'
 
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '77'
+	option dest_port '443'
+	option name '77'
+	option dest_ip '192.168.123.188'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '5000'
+	option name '5000'
+	option dest_port '5000'
+	option dest_ip '192.168.123.188'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '5001'
+	option dest_port '5001'
+	option name 'nassl'
+	option dest_ip '192.168.123.188'
 

@@ -132,6 +132,7 @@ jobs:
           cat >> .config <<EOF
           CONFIG_GRUB_TITLE="OpenWrt AutoBuild by ysp"
           CONFIG_KERNEL_BUILD_USER="ysp Playground"
+          # CONFIG_KERNEL_PRINTK is not set
           EOF
           # IPv6支持:
           cat >> .config <<EOF

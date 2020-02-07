@@ -125,7 +125,7 @@ jobs:
           # 设置根目录大小
           cat >> .config <<EOF
           CONFIG_TARGET_KERNEL_PARTSIZE=16
-          CONFIG_TARGET_ROOTFS_PARTSIZE=160
+          CONFIG_TARGET_ROOTFS_PARTSIZE=300
           CONFIG_TARGET_ROOTFS_PARTNAME=""
           EOF
           # 不滚动代码设置

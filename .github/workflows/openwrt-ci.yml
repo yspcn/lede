@@ -283,7 +283,7 @@ jobs:
           CONFIG_PACKAGE_wget=y
           CONFIG_PACKAGE_mentohust=y
           CONFIG_PACKAGE_openssh-sftp-server=y
-          CONFIG_PACKAGE_iptables-mod-iprange=y
+          # CONFIG_PACKAGE_iptables-mod-iprange=y
           CONFIG_PACKAGE_luci-ssl-openssl=y
           EOF
           # USB打印组件

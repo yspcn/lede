@@ -72,8 +72,6 @@ jobs:
           git clone https://github.com/Leo-Jo/luci-app-ssr-plus-jo
           git clone https://github.com/rufengsuixing/luci-app-adguardhome
           git clone https://github.com/vernesong/OpenClash
-          git clone https://github.com/jerrykuku/luci-app-vssr.git
-          git clone https://github.com/Lienol/openwrt-package.git
       - name: Update feeds
         run: |
           ./scripts/feeds update -a

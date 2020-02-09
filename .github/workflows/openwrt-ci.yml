@@ -72,6 +72,8 @@ jobs:
           git clone https://github.com/Leo-Jo/luci-app-ssr-plus-jo
           git clone https://github.com/rufengsuixing/luci-app-adguardhome
           git clone https://github.com/vernesong/OpenClash
+          git clone https://github.com/yspcn/luci-app-passwall
+          git clone https://github.com/jerrykuku/luci-app-vssr.git
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -137,7 +139,7 @@ jobs:
           # IPv6支持:
           cat >> .config <<EOF
           # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          CONFIG_PACKAGE_ipv6helper=y
+          # CONFIG_PACKAGE_ipv6helper=y
           EOF
           # 多文件系统支持:
           cat >> .config <<EOF
@@ -164,7 +166,7 @@ jobs:
           # USB3.0支持:
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          CONFIG_DEFAULT_luci-app-accesscontrol=y
+          # CONFIG_DEFAULT_luci-app-accesscontrol=y
           CONFIG_PACKAGE_luci-app-acme=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
@@ -189,7 +191,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_DEFAULT_luci-app-pppoe-relay=y
           CONFIG_DEFAULT_luci-app-ramfree=y
-          CONFIG_DEFAULT_luci-app-samba=y
+          # CONFIG_DEFAULT_luci-app-samba is not set
+          CONFIG_DEFAULT_luci-app-samba4=y
           # CONFIG_PACKAGE_luci-app-smartdns=y
           CONFIG_DEFAULT_luci-app-shairplay=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
@@ -242,7 +245,6 @@ jobs:
           CONFIG_PACKAGE_wget=y
           CONFIG_PACKAGE_mentohust=y
           CONFIG_PACKAGE_openssh-sftp-server=y
-          CONFIG_PACKAGE_iptables-mod-iprange=y
           CONFIG_PACKAGE_luci-ssl-openssl=y
           EOF
           # USB打印组件
